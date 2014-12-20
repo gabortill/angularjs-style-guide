@@ -4,13 +4,47 @@ This is my guide for writing consistent AngularJS code.
 
 
 ## Table of contents
+1. [IIFE](#iife)
 1. [Module](#module)
+
+
+
+## IIFE
+1. Wrap AngularJS components in an Immediately Invoked Function Expression.
+2. Use strict mode.
+
+**why?**
+
+1. Avoid polluting the global namespace helps prevent variables and function declarations from living longer than expected in the global scope, which also helps avoid variable collisions.
+1. Strict mode enables more warnings and makes JavaScript a cleaner language.
+
+```js
+// BAD
+function logger() {}
+
+angular
+    .module('app')
+    .factory('logger', logger);
+```
+
+```js
+// GOOD
+(function () {
+    'use strict';
+
+    function logger() {}
+
+    angular
+        .module('app')
+        .factory('logger', logger);
+}());
+```
 
 
 
 ## Module
 1. Use lowerCamel for naming.
-2. Use the getter syntax at all times instead of stored in a variable.
+2. Use the getter syntax instead of stored in a variable.
 
 **why?**
 
@@ -19,14 +53,14 @@ This is my guide for writing consistent AngularJS code.
 
 ```js
 // BAD
-var mainmodule = angular.module('mainmodule', []);
+var badnaming = angular.module('badnaming', []);
 app.controller();
 ```
 
 ```js
 // GOOD
 angular
-  .module('mainModule')
+  .module('goodNaming')
   .controller();
 ```
 
