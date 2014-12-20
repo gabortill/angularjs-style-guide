@@ -4,24 +4,27 @@ This is my guide for writing consistent AngularJS code.
 
 
 ## Table of contents
-1. [test](#test)
+1. [Module](#module)
 
 ## Module
-Use the getter syntax at all times instead of stored in a variable.
+1. Use the getter syntax at all times instead of stored in a variable.
+2. Use lowerCamel for naming.
 
 **why?**
 
-angular recommendation
+1. Angular recommendation.
+2. Improve readability.
 
 ```js
 // BAD
 var app = angular.module('app', []);
 app.controller();
 ```
+
 ```js
 // GOOD
 angular
-  .module('app')
+  .module('mainModule')
   .controller();
 ```
 
