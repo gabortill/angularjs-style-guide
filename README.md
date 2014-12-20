@@ -5,6 +5,7 @@ This is my guide for writing consistent AngularJS code.
 
 ## Table of contents
 1. [Single Responsibility](#single-responsibility)
+1. [File Naming](#file-naming)
 1. [IIFE](#iife)
 1. [Module](#module)
 1. [Controller](#controller)
@@ -55,6 +56,29 @@ angular
       .module('app')
       .controller('SomeFactory', SomeFactory);
 ```
+
+
+
+## File naming
+Use the following a pattern for naming files that describes the component's feature then (optionally) its type: feature.type.js
+
+**why?**
+
+Provides a consistent way to quickly identify components.
+
+```js
+// BAD
+// userLoggerFactory.js
+// Search.page.controller.js
+```
+
+```js
+// GOOD
+// userLogger.factory.js
+// SearchPage.controller.js
+```
+
+**[⬆ back to top](#table-of-contents)**
 
 
 
@@ -118,6 +142,37 @@ angular
 
 
 ## Controller
+
+### naming
+1. Use UpperCamelCase naming convention.
+1. Append the controller name with the suffix Controller.
+
+**why?**
+
+1. UpperCamelCase is conventional for identifying object that can be instantiated using a constructor.
+1. The Controller suffix is more commonly used and is more explicitly descriptive.
+
+```js
+// BAD
+
+// SearchPage.controller.js
+function SearchPage() {}
+
+angular
+    .module
+    .controller('SearchPage', SearchPage);
+```
+
+```js
+// GOOD
+
+// SearchPage.controller.js
+function SearchPageController() {}
+
+angular
+    .module
+    .controller('SearchPageController', SearchPageController);
+```
 
 ### controllerAs
 Use the controllerAs syntax over the classic controller with $scope syntax.
