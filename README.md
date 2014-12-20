@@ -284,9 +284,19 @@ function Customer() {
 
 ### Common
 1. All Services are singletons.
-1. The value, factory, service, constant, and provider methods are all providers.
+1. The value, factory, service, constant, and provider methods are all providers. They teach the Injector how to instantiate the Services.
+
+### Difference
+When declaring a Service as an injectable argument you will be provided with
 <br />
-They teach the Injector how to instantiate the Services.
+an instance of the function, like new FunctionYouPassedToService().
+
+<br />
+<br />
+
+When declaring a Factory as an injectable argument you will be provided with
+<br />
+the value that is returned by invoking the function reference passed to module.factory.
 
 **why?**
 
