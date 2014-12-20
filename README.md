@@ -60,7 +60,7 @@ angular
 
 
 ## File naming
-Use the following a pattern for naming files that describes the component's feature then (optionally) its type: feature.type.js
+Use the following a pattern for naming files that describes the component's feature then its type: feature.type.js
 
 **why?**
 
@@ -68,14 +68,16 @@ Provides a consistent way to quickly identify components.
 
 ```js
 // BAD
+
 // userLoggerFactory.js
 // Search.page.controller.js
 ```
 
 ```js
 // GOOD
+
 // userLogger.factory.js
-// SearchPage.controller.js
+// ModelBio.controller.js
 ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -155,23 +157,46 @@ angular
 ```js
 // BAD
 
-// SearchPage.controller.js
-function SearchPage() {}
+// ModelBio.controller.js
+function ModelBio() {}
 
 angular
     .module
-    .controller('SearchPage', SearchPage);
+    .controller('ModelBio', ModelBio);
 ```
 
 ```js
 // GOOD
 
-// SearchPage.controller.js
-function SearchPageController() {}
+// ModelBio.controller.js
+function ModelBioController() {}
 
 angular
     .module
-    .controller('SearchPageController', SearchPageController);
+    .controller('ModelBioController', ModelBioController);
+```
+
+### controller logic
+Avoid writing logic in Controllers, delegate to Factories/Services.
+
+**why?**
+
+Maximises reusability, encapsulated functionality and makes testing far easier and persistent.
+
+```js
+// BAD
+function BadController() {
+    var vm = this;
+    vm.doSomething = function () {};
+}
+```
+
+```js
+// GOOD
+function GoodController(someService) {
+    var vm = this;
+    vm.doSomething = someService.doSomething;
+}
 ```
 
 ### controllerAs
@@ -215,6 +240,38 @@ angular
 <div>
     {{ best.bestObject }}
 </div>
+```
+
+### this keyword
+Use a capture variable for this when using the controllerAs syntax. Choose a consistent variable name such as vm, which stands for ViewModel.
+
+**why?**
+
+The this keyword is contextual and when used within a function inside a controller may change its context. Capturing the context of this avoids encountering this problem.
+
+```js
+// BAD
+function Customer($scope) {
+    $scope.name = {};
+    $scope.sendMessage = function() {};
+}
+```
+
+```js
+// BETTER
+function Customer() {
+    this.name = {};
+    this.sendMessage = function() {};
+}
+```
+
+```js
+// BEST
+function Customer() {
+    var vm = this;
+    vm.name = {};
+    vm.sendMessage = function() {};
+}
 ```
 
 **[⬆ back to top](#table-of-contents)**
