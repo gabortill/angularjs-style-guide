@@ -282,6 +282,12 @@ function Customer() {
 
 ## Service and Factory
 
+### Common
+1. All Services are singletons.
+1. The value, factory, service, constant, and provider methods are all providers.
+<br />
+They teach the Injector how to instantiate the Services.
+
 **why?**
 
 ```js
