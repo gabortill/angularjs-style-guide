@@ -124,7 +124,7 @@ Use the controllerAs syntax over the classic controller with $scope syntax.
 
 **why?**
 
-The controllerAs is [syntactic sugar](http://en.wikipedia.org/wiki/Syntactic_sugar) over $scope.
+The controllerAs is <a href="http://en.wikipedia.org/wiki/Syntactic_sugar" target="_blank">syntactic sugar</a> over $scope.
 
 ```js
 // BAD
