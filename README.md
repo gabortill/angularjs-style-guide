@@ -60,7 +60,9 @@ angular
 
 
 ## File naming
-Use the following a pattern for naming files that describes the component's feature then its type: feature.type.js
+Use the following a pattern for naming files that describes the component's feature then its type:
+<br />
+feature.type.js
 
 **why?**
 
