@@ -142,10 +142,6 @@ The controllerAs is <a href="http://en.wikipedia.org/wiki/Syntactic_sugar" targe
 
 ```js
 // BEST
-<div>
-    {{ best.bestObject }}
-</div>
-
 function config ($routeProvider) {
     $routeProvider
         .when('/', {
@@ -157,6 +153,11 @@ function config ($routeProvider) {
 angular
     .module('app')
     .config(config);
+
+// views/best.html
+<div>
+    {{ best.bestObject }}
+</div>
 ```
 
 **[⬆ back to top](#table-of-contents)**
