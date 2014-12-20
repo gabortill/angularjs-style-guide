@@ -126,21 +126,21 @@ Use the controllerAs syntax over the classic controller with $scope syntax.
 
 The controllerAs is <a href="http://en.wikipedia.org/wiki/Syntactic_sugar" target="_blank">syntactic sugar</a> over $scope.
 
-```
+```js
 // BAD
 <div ng-controller="BadCtrl">
     {{ badObject }}
 </div>
 ```
 
-```
+```js
 // BETTER
 <div ng-controller="BetterCtrl as better">
     {{ better.betterObject }}
 </div>
 ```
 
-```
+```js
 // BEST
 
 // config.js
