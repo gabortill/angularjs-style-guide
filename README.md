@@ -11,8 +11,8 @@ This is my guide for writing consistent AngularJS code.
 1. [Service and Factory](#service-and-factory)
 1. [Directive](#directive)
 1. [Filter](#filter)
-1. [Performance](#performance)
 1. [Angular $ Wrapper Service](#angular-$-wrapper-service)
+1. [Performance](#performance)
 1. [](#)
 
 
@@ -119,7 +119,12 @@ angular
 
 ## Controller
 
+### controllerAs
+Use the controllerAs syntax over the classic controller with $scope syntax.
+
 **why?**
+
+The controllerAs is [syntactic sugar](http://en.wikipedia.org/wiki/Syntactic_sugar) over $scope.
 
 ```js
 // BAD
@@ -181,7 +186,7 @@ angular
 
 
 
-## Performance
+## Angular $ Wrapper Service
 
 **why?**
 
@@ -197,7 +202,7 @@ angular
 
 
 
-## Angular $ Wrapper Service
+## Performance
 
 **why?**
 
