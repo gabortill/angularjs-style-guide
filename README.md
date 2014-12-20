@@ -72,7 +72,7 @@ Provides a consistent way to quickly identify components.
 // BAD
 
 // userLoggerFactory.js
-// Search.page.controller.js
+// Model.Bio.controller.js
 ```
 
 ```js
