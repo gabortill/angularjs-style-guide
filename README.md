@@ -291,9 +291,6 @@ When declaring a Service as an injectable argument you will be provided with
 <br />
 an instance of the function, like new FunctionYouPassedToService().
 
-<br />
-<br />
-
 When declaring a Factory as an injectable argument you will be provided with
 <br />
 the value that is returned by invoking the function reference passed to module.factory.
