@@ -1,4 +1,4 @@
-# JavaScript Style Guide
+# AngularJS Style Guide
 This is my guide for writing consistent AngularJS code.
 
 
@@ -6,11 +6,23 @@ This is my guide for writing consistent AngularJS code.
 ## Table of contents
 1. [test](#test)
 
-## test
-Lorem ipsum dolor sit amet.
+## Module
+Use the getter syntax at all times instead of stored in a variable.
 
 **why?**
 
-just
+angular recommendation
+
+```js
+// BAD
+var app = angular.module('app', []);
+app.controller();
+```
+```js
+// GOOD
+angular
+  .module('app')
+  .controller();
+```
 
 **[⬆ back to top](#table-of-contents)**
