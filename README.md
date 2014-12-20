@@ -24,7 +24,7 @@ Define 1 component per file.
 
 * Improve readability.
 * Easier to understand the component.
-* Single responsibility principle is part of the OOP.
+* <a href="http://en.wikipedia.org/wiki/Single_responsibility_principle" target="_blank">Single responsibility principle</a> is part of the OOP.
 
 ```js
 // BAD
@@ -109,8 +109,8 @@ app.controller();
 ```js
 // GOOD
 angular
-  .module('goodNaming')
-  .controller();
+    .module('goodNaming')
+    .controller();
 ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -128,10 +128,35 @@ The controllerAs is <a href="http://en.wikipedia.org/wiki/Syntactic_sugar" targe
 
 ```js
 // BAD
+<div ng-controller="BadCtrl">
+    {{ badObject }}
+</div>
 ```
 
 ```js
-// GOOD
+// BETTER
+<div ng-controller="BetterCtrl as better">
+    {{ better.betterObject }}
+</div>
+```
+
+```js
+// BEST
+<div>
+    {{ best.bestObject }}
+</div>
+
+function config ($routeProvider) {
+    $routeProvider
+        .when('/', {
+            templateUrl: 'views/best.html',
+            controller: 'BestController',
+            controllerAs: 'best'
+        });
+}
+angular
+    .module('app')
+    .config(config);
 ```
 
 **[⬆ back to top](#table-of-contents)**
