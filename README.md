@@ -7,6 +7,13 @@ This is my guide for writing consistent AngularJS code.
 1. [Single Responsibility](#single-responsibility)
 1. [IIFE](#iife)
 1. [Module](#module)
+1. [Controller](#controller)
+1. [Service and Factory](#service-and-factory)
+1. [Directive](#directive)
+1. [Filter](#filter)
+1. [Performance](#performance)
+1. [Angular $ Wrapper Service](#angular-$-wrapper-service)
+1. [](#)
 
 
 
@@ -15,7 +22,8 @@ Define 1 component per file.
 
 **why?**
 
-* Improve readability and easier to understand the component.
+* Improve readability.
+* Easier to understand the component.
 * Single responsibility principle is part of the OOP.
 
 ```js
@@ -103,6 +111,118 @@ app.controller();
 angular
   .module('goodNaming')
   .controller();
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+
+## Controller
+
+**why?**
+
+```js
+// BAD
+```
+
+```js
+// GOOD
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+
+## Service and Factory
+
+**why?**
+
+```js
+// BAD
+```
+
+```js
+// GOOD
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+
+## Directive
+
+**why?**
+
+```js
+// BAD
+```
+
+```js
+// GOOD
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+
+## Filter
+
+**why?**
+
+```js
+// BAD
+```
+
+```js
+// GOOD
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+
+## Performance
+
+**why?**
+
+```js
+// BAD
+```
+
+```js
+// GOOD
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+
+## Angular $ Wrapper Service
+
+**why?**
+
+```js
+// BAD
+```
+
+```js
+// GOOD
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+
+##
+
+**why?**
+
+```js
+// BAD
+```
+
+```js
+// GOOD
 ```
 
 **[⬆ back to top](#table-of-contents)**
