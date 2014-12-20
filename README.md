@@ -120,7 +120,7 @@ angular
 
 
 ## Module
-1. Use lowerCamel for naming.
+1. Use lowerCamelCase pattern for naming.
 1. Use the getter syntax instead of stored in a variable.
 
 **why?**
