@@ -4,14 +4,55 @@ This is my guide for writing consistent AngularJS code.
 
 
 ## Table of contents
+1. [Single Responsibility](#single-responsibility)
 1. [IIFE](#iife)
 1. [Module](#module)
 
 
 
+## Single Responsibility
+Define 1 component per file.
+
+**why?**
+
+Improve readability and easier to understand the component.
+Single responsibility principle is part of the OOP.
+
+```js
+// BAD
+function SomeController() {}
+
+function someFactory() {}
+
+angular
+      .module('app', [])
+      .controller('SomeController', SomeController)
+      .factory('someFactory', someFactory);
+```
+
+```js
+// GOOD
+function SomeController() {}
+
+angular
+      .module('app', [])
+      .controller('SomeController', SomeController)
+```
+
+```js
+// GOOD
+function SomeFactory() {}
+
+angular
+      .module('app')
+      .controller('SomeFactory', SomeFactory);
+```
+
+
+
 ## IIFE
 1. Wrap AngularJS components in an Immediately Invoked Function Expression.
-2. Use strict mode.
+1. Use strict mode.
 
 **why?**
 
@@ -44,12 +85,12 @@ angular
 
 ## Module
 1. Use lowerCamel for naming.
-2. Use the getter syntax instead of stored in a variable.
+1. Use the getter syntax instead of stored in a variable.
 
 **why?**
 
 1. Improve readability.
-2. Angular recommendation.
+1. Angular recommendation.
 
 ```js
 // BAD
