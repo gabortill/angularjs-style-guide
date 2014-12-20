@@ -15,8 +15,8 @@ Define 1 component per file.
 
 **why?**
 
-Improve readability and easier to understand the component.
-Single responsibility principle is part of the OOP.
+* Improve readability and easier to understand the component.
+* Single responsibility principle is part of the OOP.
 
 ```js
 // BAD
