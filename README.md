@@ -303,18 +303,17 @@ UpperCamelCase (PascalCase) for naming your services.
 Used as constructor functions.
 
 ### create service
-Use the **this** keyword.
+Prefer a service instead of a factory.
 
 **why?**
 
-* Keep function style consistent with everything else.
-* Services are instantiated and should be class-like also.
+In this way you can take advantage of the "classical" inheritance easier.
 
 ```js
 // BAD
-function BadService () {}
-
-BadService.prototype.someMethod = function () {};
+function BadService () {
+    this.someMethod = function () {};
+}
 
 angular
     .module('app')
@@ -323,9 +322,9 @@ angular
 
 ```js
 // GOOD
-function GoodService () {
-    this.someMethod = function () {};
-}
+function GoodService () {}
+
+GoodService.prototype.someMethod = function () {};
 
 angular
     .module('app')
