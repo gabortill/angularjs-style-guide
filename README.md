@@ -302,6 +302,36 @@ UpperCamelCase (PascalCase) for naming your services.
 
 Used as constructor functions.
 
+### create service
+Use the **this** keyword.
+
+**why?**
+
+* Keep function style consistent with everything else.
+* Services are instantiated and should be class-like also.
+
+```js
+// BAD
+function BadService () {}
+
+BadService.prototype.someMethod = function () {};
+
+angular
+    .module('app')
+    .service('BadService', BadService);
+```
+
+```js
+// GOOD
+function GoodService () {
+    this.someMethod = function () {};
+}
+
+angular
+    .module('app')
+    .service('GoodService', GoodService);
+```
+
 ### create factory
 Create an object with the same name inside the function.
 
@@ -311,8 +341,8 @@ Create an object with the same name inside the function.
 * Easily see any private methods and variables.
 
 ```js
-// BAD factory() example
-function AnotherService () {
+// BAD
+function BadService () {
     var someValue = '';
 
     var someMethod = function () {};
@@ -325,35 +355,24 @@ function AnotherService () {
 
 angular
     .module('app')
-    .factory('AnotherService', AnotherService);
+    .factory('BadService', BadService);
 ```
 
 ```js
-// GOOD factory() example
-function AnotherService () {
-    var AnotherService = {};
+// GOOD
+function GoodService () {
+    var GoodService = {};
 
-    AnotherService.someValue = '';
+    GoodService.someValue = '';
 
-    AnotherService.someMethod = function () {};
+    GoodService.someMethod = function () {};
 
-    return AnotherService;
+    return GoodService;
 }
 
 angular
     .module('app')
-    .factory('AnotherService', AnotherService);
-```
-
-```js
-// GOOD service() example
-function SomeService () {
-    this.someMethod = function () {};
-}
-
-angular
-    .module('app')
-    .service('SomeService', SomeService);
+    .factory('GoodService', GoodService);
 ```
 
 **[⬆ back to top](#table-of-contents)**
