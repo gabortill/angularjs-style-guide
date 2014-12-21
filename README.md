@@ -308,6 +308,8 @@ Prefer a service instead of a factory.
 **why?**
 
 In this way you can take advantage of the "classical" inheritance easier.
+<br />
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain" target="_blank">Inheritance and the prototype chain</a>
 
 ```js
 // BAD
