@@ -284,12 +284,12 @@ function Customer() {
 
 ### common
 1. All Services are singletons.
-1. The value, factory, service, constant, and provider methods are all providers. They teach the Injector how to instantiate the Services.
+1. The value, factory, service, constant, and provider methods are all providers. They teach the Injector how to instantiate the services.
 
 ### difference
 When declaring a **service** as an injectable argument you will be provided with
 <br />
-an instance of the function, like new FunctionYouPassedToService().
+an instance of the function, like: new FunctionYouPassedToService().
 
 When declaring a **factory** as an injectable argument you will be provided with
 <br />
@@ -303,7 +303,7 @@ UpperCamelCase (PascalCase) for naming your services.
 Used as constructor functions.
 
 ### create factory()
-Create an Object with the same name inside the function (check the GOOD factory example below).
+Create an Object with the same name inside the function.
 
 **why?**
 
