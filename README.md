@@ -283,7 +283,7 @@ function Customer() {
 ## Service and Factory
 
 ### common
-1. All Services are singletons.
+1. All services are singletons.
 1. The value, factory, service, constant, and provider methods are all providers. They teach the Injector how to instantiate the services.
 
 ### difference
@@ -302,8 +302,8 @@ UpperCamelCase (PascalCase) for naming your services.
 
 Used as constructor functions.
 
-### create factory()
-Create an Object with the same name inside the function.
+### create factory
+Create an object with the same name inside the function.
 
 **why?**
 
