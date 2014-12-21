@@ -282,11 +282,11 @@ function Customer() {
 
 ## Service and Factory
 
-### Common
+### common
 1. All Services are singletons.
 1. The value, factory, service, constant, and provider methods are all providers. They teach the Injector how to instantiate the Services.
 
-### Difference
+### difference
 When declaring a **service** as an injectable argument you will be provided with
 <br />
 an instance of the function, like new FunctionYouPassedToService().
@@ -295,14 +295,65 @@ When declaring a **factory** as an injectable argument you will be provided with
 <br />
 the value that is returned by invoking the function reference passed to module.factory.
 
+### naming
+UpperCamelCase (PascalCase) for naming your services.
+
 **why?**
 
+Used as constructor functions.
+
+### create factory()
+Create an Object with the same name inside the function (check the GOOD factory example below).
+
+**why?**
+
+* Any bindings to primitives are kept up to date, and it makes internal module namespacing a little easier.
+* Easily see any private methods and variables.
+
 ```js
-// BAD
+// BAD factory() example
+function AnotherService () {
+    var someValue = '';
+
+    var someMethod = function () {};
+
+    return {
+        someValue: someValue,
+        someMethod: someMethod
+    };
+}
+
+angular
+    .module('app')
+    .factory('AnotherService', AnotherService);
 ```
 
 ```js
-// GOOD
+// GOOD factory() example
+function AnotherService () {
+    var AnotherService = {};
+
+    AnotherService.someValue = '';
+
+    AnotherService.someMethod = function () {};
+
+    return AnotherService;
+}
+
+angular
+    .module('app')
+    .factory('AnotherService', AnotherService);
+```
+
+```js
+// GOOD service() example
+function SomeService () {
+    this.someMethod = function () {};
+}
+
+angular
+    .module('app')
+    .service('SomeService', SomeService);
 ```
 
 **[⬆ back to top](#table-of-contents)**
