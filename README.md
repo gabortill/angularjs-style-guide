@@ -229,7 +229,7 @@ The controllerAs is <a href="http://en.wikipedia.org/wiki/Syntactic_sugar" targe
 function config ($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'views/best.html',
+            templateUrl: 'best.html',
             controller: 'BestController',
             controllerAs: 'best'
         });
@@ -283,15 +283,15 @@ function Customer() {
 ## Service and Factory
 
 ### common
-1. All services are singletons.
-1. The value, factory, service, constant, and provider methods are all providers. They teach the Injector how to instantiate the services.
+* All services are singletons.
+* The value, factory, service, constant, and provider methods are all providers. They teach the Injector how to instantiate the services.
 
 ### difference
-When declaring a **service** as an injectable argument you will be provided with
+* When declaring a **service** as an injectable argument you will be provided with
 <br />
 an instance of the function, like: new FunctionYouPassedToService().
 
-When declaring a **factory** as an injectable argument you will be provided with
+* When declaring a **factory** as an injectable argument you will be provided with
 <br />
 the value that is returned by invoking the function reference passed to module.factory.
 
@@ -381,8 +381,13 @@ angular
 
 
 ## Directive
+Any DOM manipulation should take place inside a directive, and only directives.
 
 **why?**
+
+DOM manipulation can be difficult to test, debug, and there are often better ways (e.g. CSS, animations, templates).
+BUT
+If alternative ways can be used such as using CSS to set styles or the animation services, Angular templating, ngShow or ngHide, then use those instead. For example, if the directive simply hides and shows, use ngHide/ngShow.
 
 ```js
 // BAD
