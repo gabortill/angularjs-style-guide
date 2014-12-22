@@ -386,7 +386,9 @@ Any DOM manipulation should take place inside a directive, and only directives.
 **why?**
 
 DOM manipulation can be difficult to test, debug, and there are often better ways (e.g. CSS, animations, templates).
+<br />
 BUT
+<br />
 If alternative ways can be used such as using CSS to set styles or the animation services, Angular templating, ngShow or ngHide, then use those instead. For example, if the directive simply hides and shows, use ngHide/ngShow.
 
 ```js
