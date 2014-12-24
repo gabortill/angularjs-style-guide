@@ -485,7 +485,11 @@ function badDirective() {
 // GOOD
 function goodDirective() {
     return {
-        template: '<a class="btn" href="/"><img alt="home" height="40" src="home.png" width="60" /></a>'
+        template: [
+            '<a class="btn" href="/">',
+                '<img alt="home" height="40" src="home.png" width="60" />',
+            '</a>'
+        ].join()
     };
 }
 ```
