@@ -401,7 +401,7 @@ If alternative ways can be used such as using CSS to set styles or the animation
 <br />
 BUT
 <br />
-never not use ng prefix.
+never not use the ng prefix.
 
 **why?**
 
