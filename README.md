@@ -408,6 +408,19 @@ never not use the ng prefix.
 1. Angular recommendation.
 1. Prevent override future standards.
 
+```js
+// BAD
+<badDirective></badDirective>
+<baddirective></baddirective>
+<bad_directive></bad_directive>
+<carousel></carousel>
+```
+
+```js
+// GOOD
+<my-carousel></my-carousel>
+```
+
 ### usage restriction
 1. Use directives as attributes or elements instead of comments or classes.
 1. Use an element when you are creating a component that is in control of the template.
