@@ -391,6 +391,7 @@ If alternative ways can be used such as using CSS to set styles or the animation
 1. DOM manipulation should be done inside the link method of a directive.
 
 **why?**
+
 1. DOM manipulation can be difficult to test, debug, and there are often better ways (e.g. CSS, animations, templates).
 1. Any code reusability should be encapsulated (behavioural and markup related) too.
 
