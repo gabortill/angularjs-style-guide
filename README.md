@@ -397,7 +397,7 @@ If alternative ways can be used such as using CSS to set styles or the animation
 
 ### naming
 1. Prefer using the dash-delimited naming format.
-1. Prefix your own directive names a two or three letter prefix
+1. Prefix your own directive names a few letter prefix
 <br />
 BUT
 <br />
@@ -454,8 +454,9 @@ never not use the ng prefix.
 1. Normally, a scope prototypically inherits from its parent. An isolated scope does not.
 <br />
 <a href="https://docs.angularjs.org/api/ng/service/$compile#directive-definition-object" target="_blank">Directive Definition Object</a>
-1. * angular recommendation
-* Directives should clean up after themselves.
+1. Angular recommendation.
+<br />
+Directives should clean up after themselves.
 
 ### controller and link
 Use controller when you want to expose an API to other directives. Otherwise use link.
