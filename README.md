@@ -381,22 +381,98 @@ angular
 
 
 ## Directive
-Any DOM manipulation should take place inside a directive, and only directives.
 
-**why?**
-
-DOM manipulation can be difficult to test, debug, and there are often better ways (e.g. CSS, animations, templates).
+### DOM manipulation
+1. Any DOM manipulation should take place inside a directive.
 <br />
 BUT
 <br />
 If alternative ways can be used such as using CSS to set styles or the animation services, Angular templating, ngShow or ngHide, then use those instead. For example, if the directive simply hides and shows, use ngHide/ngShow.
+1. DOM manipulation should be done inside the link method of a directive.
+
+**why?**
+1. DOM manipulation can be difficult to test, debug, and there are often better ways (e.g. CSS, animations, templates).
+1. Any code reusability should be encapsulated (behavioural and markup related) too.
+
+### naming
+1. Prefer using the dash-delimited naming format.
+1. Prefix your own directive names a two or three letter prefix
+<br />
+BUT
+<br />
+Do not use ng prefix.
+
+**why?**
+
+1. Angular recommendation.
+1. Prevent override future standards.
+
+### usage restriction
+1. Use directives as attributes or elements instead of comments or classes.
+1. Use an element when you are creating a component that is in control of the template.
+1. Use an attribute when you are decorating an existing element with new functionality.
+
+**why?**
+
+1. Make your code more readable.
+1. Angular recommendation
+1. Angular recommendation
 
 ```js
 // BAD
+<!-- directive: custom-directive -->
+<div class="custom-directive"></div>
 ```
 
 ```js
 // GOOD
+<custom-directive></custom-directive>
+<div custom-directive></div>
+<div data-custom-directive></div>
+```
+
+### scope
+1. Create an isolated scope when you develop reusable components.
+1. Use scope.$on('$destroy', ...) to run a clean-up function when the directive is removed.
+
+**why?**
+
+1. Normally, a scope prototypically inherits from its parent. An isolated scope does not.
+<br />
+<a href="https://docs.angularjs.org/api/ng/service/$compile#directive-definition-object" target="_blank">Directive Definition Object</a>
+1. * angular recommendation
+* Directives should clean up after themselves.
+
+### controller and link
+Use controller when you want to expose an API to other directives. Otherwise use link.
+
+**why?**
+
+Angular recommendation.
+
+### template
+Use the Array.join method when for templates.
+
+**why?**
+
+Improve readability.
+
+```js
+// BAD
+function badDirective() {
+    return {
+        template: '<a class="btn" href="/"><img alt="home" height="40" src="home.png" width="60" /></a>'
+    };
+}
+```
+
+```js
+// GOOD
+function goodDirective() {
+    return {
+        template: '<a class="btn" href="/"><img alt="home" height="40" src="home.png" width="60" /></a>'
+    };
+}
 ```
 
 **[⬆ back to top](#table-of-contents)**
