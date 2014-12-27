@@ -525,16 +525,13 @@ Improve readability and stay consistent.
 
 
 ## Performance
+1. Use the one-time binding syntax {{ ::value }} where it makes sense.
+1. Use $scope.$digest over $scope.$apply where it makes sense. Only child scopes will update.
 
 **why?**
 
-```js
-// BAD
-```
-
-```js
-// GOOD
-```
+1. Binding once removes the watcher from the scope's $$watchers array after the undefined variable becomes resolved, this improving performance in each dirty-check.
+1. $scope.$apply will call $rootScope.$digest, which causes the entire application $$watchers to dirty-check again. Using $scope.$digest will dirty check current and child scopes from the initiated $scope.
 
 **[⬆ back to top](#table-of-contents)**
 
