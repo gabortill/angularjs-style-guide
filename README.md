@@ -510,16 +510,15 @@ Improve readability and stay consistent.
 
 
 ## Angular $ Wrapper Service
+* Use $document instead of document.
+* Use $window instead of window.
+* Use $timeout instead of setTimeout.
+* Use $interval instead of setInterval.
 
 **why?**
 
-```js
-// BAD
-```
-
-```js
-// GOOD
-```
+* Angular recommendation.
+* These services are wrapped by Angular and more easily testable.
 
 **[⬆ back to top](#table-of-contents)**
 
