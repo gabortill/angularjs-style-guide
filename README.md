@@ -503,7 +503,7 @@ Use lowerCamelCase pattern for naming.
 
 **why?**
 
-Improve readability.
+Improve readability and stay consistent.
 
 **[⬆ back to top](#table-of-contents)**
 
