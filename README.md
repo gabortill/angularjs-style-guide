@@ -499,16 +499,11 @@ function goodDirective() {
 
 
 ## Filter
+Use lowerCamelCase pattern for naming.
 
 **why?**
 
-```js
-// BAD
-```
-
-```js
-// GOOD
-```
+Improve readability.
 
 **[⬆ back to top](#table-of-contents)**
 
