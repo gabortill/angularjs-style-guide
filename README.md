@@ -534,19 +534,3 @@ Improve readability and stay consistent.
 1. $scope.$apply will call $rootScope.$digest, which causes the entire application $$watchers to dirty-check again. Using $scope.$digest will dirty check current and child scopes from the initiated $scope.
 
 **[⬆ back to top](#table-of-contents)**
-
-
-
-##
-
-**why?**
-
-```js
-// BAD
-```
-
-```js
-// GOOD
-```
-
-**[⬆ back to top](#table-of-contents)**
