@@ -408,7 +408,7 @@ never not use the ng prefix.
 1. Angular recommendation.
 1. Prevent override future standards.
 
-```js
+```html
 // BAD
 <badDirective></badDirective>
 <baddirective></baddirective>
